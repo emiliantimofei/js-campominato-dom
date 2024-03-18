@@ -39,24 +39,6 @@ bottone.addEventListener('click', function(){
     }
 });
 
-// const listanera = [];
-// generateUniqueRandomNumber(1, 16, listanera);
-
-// function generateUniqueRandomNumber(min, max, blacklist) {
-//     let isFound = false;
-//     let randomNumber;
-
-//     while ( !isFound ){
-//         randomNumber = getRndInteger(min, max);
-
-//         if ( blacklist.includes(randomNumber) ){
-//             isFound = true;
-//         }
-//     }
-
-//     return randomNumber;
-// };
-
-// function getRndInteger(minimum, maximum) {
-//     return Math.floor(Math.random() * (maximum - minimum + 1) ) + minimum;
-// };
+function getRndInteger(minimum, maximum) {
+    return Math.floor(Math.random() * (maximum - minimum + 1) ) + minimum;
+};
