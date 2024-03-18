@@ -42,3 +42,14 @@ bottone.addEventListener('click', function(){
 function getRndInteger(minimum, maximum) {
     return Math.floor(Math.random() * (maximum - minimum + 1) ) + minimum;
 };
+
+function randomNumForArray(number) {
+    for (let index = 0; index < number; index++) {
+        let randomN = '' + getRndInteger(1, 100);
+        return randomN[index];
+    }
+    
+}
+
+let array = [randomNumForArray(16)];
+console.log(array);
