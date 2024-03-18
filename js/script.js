@@ -26,30 +26,49 @@ const numChildren = 100;
 // inoltre stampano in console il numero relativo alla loro posizione
 bottone.addEventListener('click', function(){
     app.classList.replace('d-n', 'd-b');
+    let bombs = []; // inserisco gli elementi randomici all'interno dell'array
 
-    for (let i = 0; i < numChildren; i++) {
+    for (let i = 0; i < 16; i++) {
+        bombs.push(generateUniqueRandomNumber(1, 100, bombs));
+    }
+
+    for (let i = 1; i < numChildren; i++) {
         let childEl = document.createElement('div');
         childEl.classList.add('child');
         childEl.innerHTML = '';
         app.appendChild(childEl);
         childEl.addEventListener('click', function(){
-            childEl.classList.add('bg-click');
-            console.log(`Div ${i + 1}`);
+            if(bombs.includes(i)){
+                childEl.classList.add('bg-click-bomb');
+                console.log('Ho perso!');
+            } else {
+                childEl.classList.add('bg-click');
+                console.log(`Div ${i}`);
+            }
         })
     }
 });
+
+
 
 function getRndInteger(minimum, maximum) {
     return Math.floor(Math.random() * (maximum - minimum + 1) ) + minimum;
 };
 
-function randomNumForArray(number) {
-    for (let index = 0; index < number; index++) {
-        let randomN = '' + getRndInteger(1, 100);
-        return randomN[index];
-    }
-    
-}
 
-let array = [randomNumForArray(16)];
-console.log(array);
+
+function generateUniqueRandomNumber(min, max, blacklist) {
+    let isFound = false;
+    let randomNumber;
+
+    while ( !isFound ){
+        randomNumber = getRndInteger(min, max);
+
+        if ( !blacklist.includes(randomNumber) ){
+            isFound = true;
+        }
+    }
+
+    return randomNumber;
+};
+
