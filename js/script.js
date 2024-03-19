@@ -72,3 +72,8 @@ function generateUniqueRandomNumber(min, max, blacklist) {
     return randomNumber;
 };
 
+// Ho provato a fare l'esercizio usando la correzione di Clelia ed ho capito che dal codice di qualcun altro mi confondo
+// Sopratutto quando provo ad implementare soluzioni che non corrispondono al mio modus operandi 
+// se riesco a strappare un po' di tempo nei prossimi giorni cerco di continuare l'esercizio autonomamente 
+// ho lavorato un ora in cui più che risolvere problemi ne creavo di nuovi 
+// per ora mi focalizzo sulle slide di domani...
